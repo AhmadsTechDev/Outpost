@@ -5,7 +5,9 @@ import React from 'react'
 import SiteHeader from './SiteHeader';
 
 const AppShell = ({children} : {children: React.ReactNode}) => {
+  
    const pathname = usePathname();
+  //  if /workspace/*, then render children only (full screen mode) but if not, render header and children (normal mode)
    const isFullScreenRoute = pathname?.startsWith("/workspace/") || pathname?.startsWith("/workspace");
 
    if (isFullScreenRoute) {

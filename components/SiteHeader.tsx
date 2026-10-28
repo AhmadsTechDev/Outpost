@@ -53,7 +53,7 @@ const SiteHeader = () => {
 
       <div className="flex items-center gap-3">
 
-        {/* saat user belum login */}
+        {/* saat user belum login tampikan button Sign in dan Get Started */}
         <Show when="signed-out">
           <SignInButton mode="modal">
             <Button variant="ghost" size="sm">
@@ -66,7 +66,7 @@ const SiteHeader = () => {
            </SignUpButton>
         </Show>
 
-        {/* saat user sudah login */}
+        {/* saat user sudah login tampilkan organization switcher dan user button */}
         <Show when="signed-in">
           <OrganizationSwitcher afterCreateOrganizationUrl="/dashboard" />
             {isLandingPage && (
